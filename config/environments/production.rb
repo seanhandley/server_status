@@ -66,7 +66,7 @@ ServerStatus::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # Base mailer url for password reset mails
-  config.action_mailer.default_url_options = { :host => 'http://myapp.heroku.com' }
+  config.action_mailer.default_url_options = { :host => 'http://mbserverstatus.heroku.com/' }
 
   # Make Heroku happy
   config.assets.initialize_on_precompile = false
