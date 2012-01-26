@@ -1,0 +1,20 @@
+src_files:
+  - public/javascripts/jquery.min.js
+  - public/javascripts/bootstrap-alerts.js
+  - public/javascripts/bootstrap-buttons.js
+  - public/javascripts/bootstrap-dropdown.js
+  - public/javascripts/bootstrap-modal.js
+  - public/javascripts/application.js
+
+stylesheets:
+  - stylesheets/**/*.css
+
+helpers:
+  - helpers/jasmine-jquery.js
+
+spec_files:
+  - '**/*[sS]pec.js'
+
+src_dir: /
+
+spec_dir: spec/javascripts

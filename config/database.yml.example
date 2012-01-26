@@ -1,0 +1,12 @@
+development: &DEFAULTS
+  adapter: postgresql
+  encoding: unicode
+  database: my_app_development
+  pool: 5
+  username: my_app_user
+  password:
+
+test:
+  <<: *DEFAULTS
+  database: my_app_test
+
