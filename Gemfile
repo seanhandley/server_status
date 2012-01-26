@@ -9,4 +9,5 @@ group :development, :test do
   gem "capybara"
   gem "rspec-rails"
   gem "jasmine"
+  gem "heroku"
 end
