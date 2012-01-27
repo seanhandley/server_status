@@ -7,4 +7,11 @@ describe HomeController do
       response.should be_success
     end
   end
+
+	context '#lol' do
+    it 'should lol' do
+      get :lol
+      response.body.should match('lol')
+    end
+  end
 end
