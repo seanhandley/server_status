@@ -18,7 +18,7 @@
 </div>
 <div class="span4">
   <h3>Resolved Issues</h3>
-  <% if @scheduled_events.count > 0 %>
+  <% if @resolved_events.count > 0 %>
     <% @resolved_events.each do |event| %>
       <%= render partial: 'event', locals: {event: event} %>
     <% end %>

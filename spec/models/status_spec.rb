@@ -4,7 +4,7 @@ describe Status do
 
   context "creating a new valid status" do
 
-    let(:valid_status){ Status.new(title: 't'*30) }
+    let(:valid_status){ Status.new(title: 't'*30, priority: 1) }
 
     it "should be valid" do
       valid_status.should be_valid
@@ -12,6 +12,10 @@ describe Status do
 
     it "should have a title" do
       valid_status.should respond_to(:title)
+    end
+
+    it "should have a priority" do
+      valid_status.should respond_to(:priority)
     end
 
   end

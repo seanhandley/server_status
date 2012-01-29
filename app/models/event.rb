@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
   # Attributes
-  attr_accessible :title, :description, :status
+  attr_accessible :title, :description, :status, :scheduled_for
 
   # Associations
   has_many :updates, :dependent => :delete_all
@@ -12,9 +12,9 @@ class Event < ActiveRecord::Base
   validates_presence_of :status
 
   # Scopes
-  scope :resolved, where("resolved_at IS NOT NULL")
-  scope :active, where("resolved_at IS NULL")
-  scope :scheduled, where("scheduled_for IS NOT NULL")
+  scope :resolved,  lambda { where("resolved_at IS NOT NULL") }
+  scope :active,    lambda { where("resolved_at IS NULL AND scheduled_for IS NULL") }
+  scope :scheduled, lambda { where("resolved_at IS NULL AND scheduled_for IS NOT NULL") }
 
   # Properties
   def scheduled?

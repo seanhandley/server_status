@@ -83,3 +83,15 @@ body {
 .topbar input {
   border: 0px solid #65A6D1;
 }
+
+.label.all_ok {
+  background-color: #46A546;
+}
+
+.label.major_issue {
+  background-color: #C43C35;
+}
+
+.label.minor_issue {
+  background-color: ##F89406;
+}

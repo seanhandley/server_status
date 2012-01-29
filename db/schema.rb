@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120129143519) do
+ActiveRecord::Schema.define(:version => 20120129184545) do
 
   create_table "events", :force => true do |t|
     t.string   "title",         :null => false
@@ -24,8 +24,11 @@ ActiveRecord::Schema.define(:version => 20120129143519) do
   end
 
   create_table "statuses", :force => true do |t|
-    t.string "title", :null => false
+    t.string  "title",    :null => false
+    t.integer "priority"
   end
+
+  add_index "statuses", ["priority"], :name => "index_statuses_on_priority", :unique => true
 
   create_table "updates", :force => true do |t|
     t.string   "description", :null => false
