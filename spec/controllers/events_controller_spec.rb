@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe HomeController do
+describe EventsController do
   context '#index' do
     it 'should load successfully' do
       get :index

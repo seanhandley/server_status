@@ -1,3 +1,4 @@
 ServerStatus::Application.routes.draw do
-  root :to => "home#index"
+  resources :events
+  root :to => "events#index"
 end

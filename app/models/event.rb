@@ -11,6 +11,11 @@ class Event < ActiveRecord::Base
   validates_length_of :description, :within => 1..1000
   validates_presence_of :status
 
+  # Scopes
+  scope :resolved, where("resolved_at IS NOT NULL")
+  scope :active, where("resolved_at IS NULL")
+  scope :scheduled, where("scheduled_for IS NOT NULL")
+
   # Properties
   def scheduled?
    !!scheduled_for

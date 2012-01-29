@@ -7,6 +7,7 @@
   <%= javascript_include_tag 'jquery.min.js', 'application.js' %>
   <%= javascript_include_tag 'bootstrap-dropdown.js', 'bootstrap-alerts.js', 'bootstrap-buttons.js' %>
   <%= javascript_include_tag 'bootstrap-modal.js', 'bootstrap-twipsy.js', 'bootstrap-popover.js' %>
+    <%= javascript_include_tag 'bootstrap-tabs.js' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -23,19 +24,12 @@
         <small>Active issues or planned maintenance will be announced here.</small></h1>
       </div>
       <div class="row">
-        <div class="span10">
-          <h2>Current Issues</h2>
-          <%= yield %>
-        </div>
-        <div class="span4">
-          <h3>Resolved Issues</h3>
-          <%= yield %>
-        </div>
+        <%= yield %>
       </div>
     </div>
 
     <footer>
-      <p>&copy; Melbourne 2012</p>
+      <p>&copy; Melbourne 2012. All rights reserved.</p>
     </footer>
 
   </div> <!-- /container -->
