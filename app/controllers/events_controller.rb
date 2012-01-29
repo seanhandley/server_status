@@ -5,4 +5,8 @@ class EventsController < ApplicationController
     @resolved_events = Event.resolved.map {|e| EventDecorator.new(e)}
     @overall_status = Status.overall_status
   end
+
+  def show
+    @event = EventDecorator.new(Event.find(params[:id]))
+  end
 end

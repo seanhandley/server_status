@@ -1,0 +1,6 @@
+<div class="event">
+  <h3><%= @event.title %>
+  <span class="label <%= @event.status.title %>"><%= @event.status.title.humanize %></span></h3>
+  <p><%= @event.description %></p>
+  <h4><small><%= @event.last_updated %></small></h4>
+</div>
