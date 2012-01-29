@@ -11,6 +11,31 @@
 </head>
 <body>
   <%= render 'shared/flash', :flash => flash %>
-  <%= yield %>
+
+  <%= render partial: 'shared/topbar' %>
+
+  <div class="container">
+
+    <div class="content">
+      <div class="page-header">
+        <h1>Server Status<br><small>Active issues or planned maintenance will be announced here.</small></h1>
+      </div>
+      <div class="row">
+        <div class="span10">
+          <h2>Current Issues</h2>
+          <%= yield %>
+        </div>
+        <div class="span4">
+          <h3>Resolved Issues</h3>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; Melbourne 2012</p>
+    </footer>
+
+  </div> <!-- /container -->
+
 </body>
 </html>
