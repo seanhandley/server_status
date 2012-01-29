@@ -22,6 +22,12 @@ describe Event do
       valid_event.scheduled?.should be_true
     end
 
+    it "should know whether it's resolved" do
+      valid_event.resolved?.should be_false
+      valid_event.resolve
+      valid_event.resolved?.should be_true
+    end
+
     it "should have a status" do
       valid_event.should respond_to(:status)
     end

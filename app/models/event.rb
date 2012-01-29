@@ -16,9 +16,17 @@ class Event < ActiveRecord::Base
    !!scheduled_for
   end
 
+  def resolved?
+   !!resolved_at
+  end
+
   # Methods
   def create_update(update_text)
-    updates.create(description: update_text)
+    self.updates.create(description: update_text)
+  end
+
+  def resolve
+    self.resolved_at = Time.now
   end
 
 end
