@@ -3,10 +3,14 @@ Status.create! title: 'major_issue', priority: 1
 Status.create! title: 'minor_issue', priority: 2
 Status.create! title: 'all_ok', priority: 3
 Event.all.each{|e| e.destroy }
-Event.create(title: "It's all gone wrong",
+event = Event.create(title: "It's all gone wrong",
              description: "Zomg what are we going to do?!?!?! All of the servers
              have exploded violently in a cloud of dust.",
              status: Status.find_by_title('major_issue'))
+event.create_update("Went into the server room. It's a real mess in there. Bits of
+server all over the place, clouds of smoke, crying children. Mass hysteria.")
+event.create_update("Attempting to rebuild servers with duct tape. Going well so
+far. Maybe a few tin cans and some bubble gum will help too.")
 Event.create(title: "Planned maintenance",
              description: "Flux capacitor needs a good wash after that last trip.
               Don't forget to use shampoo and conditioner.",
