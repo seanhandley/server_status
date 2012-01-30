@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
   # Attributes
-  attr_accessible :title, :description, :status, :scheduled_for
+  attr_accessible :title, :description, :status
 
   # Associations
   has_many :updates, :dependent => :delete_all

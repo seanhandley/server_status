@@ -99,3 +99,19 @@ body {
 .label.minor_issue {
   background-color: #F89406;
 }
+
+.update {
+  margin-left: 16px;
+  background: #EEE;
+  padding: 10px;
+  margin-right: 160px;
+  margin-bottom: 1px;
+}
+
+.updates h6 {
+  margin-left: 16px;
+}
+
+.update p {
+  margin-bottom: 0px;
+}
