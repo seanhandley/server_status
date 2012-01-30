@@ -24,7 +24,7 @@ describe EventDecorator do
   context "#last_updated" do
     it "should format the date sensibly" do
       '%a %d %B %Y %H:%m:%S'
-      subject.last_updated.should =~ /\w+ \d+ \w+ \d\d\d\d \d\d?:\d\d?:\d\d?/
+      subject.last_updated.should =~ /\w+ \d\d?\w\w \w+ \d\d\d\d \d\d?:\d\d?:\d\d?/
     end
   end
 end

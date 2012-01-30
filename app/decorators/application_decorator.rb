@@ -1,6 +1,8 @@
 require 'delegate'
+require 'active_support'
 
 class ApplicationDecorator < SimpleDelegator
+  include ActiveSupport::Inflector
 
   def initialize(klass)
     @model = klass

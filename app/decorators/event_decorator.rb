@@ -4,6 +4,6 @@ class EventDecorator < ApplicationDecorator
   end
 
   def last_updated
-    model.updated_at.strftime('%a %d %B %Y %H:%m:%S')
+    model.updated_at.strftime("%a #{ordinalize(model.updated_at.day)} %B %Y %H:%m:%S")
   end
 end
