@@ -9,19 +9,19 @@ describe EventsController do
     end
 
     it "should set up active events" do
-      Event.stub(:active).and_return([mock_model(Event, {})])
+      Event.stub_chain(:active, :order, :all).and_return([mock_model(Event, {})])
       get :index
       assigns(:active_events).count.should == 1
     end
 
     it "should set up scheduled events" do
-      Event.stub(:scheduled).and_return([mock_model(Event, {})])
+      Event.stub_chain(:scheduled, :order, :all).and_return([mock_model(Event, {})])
       get :index
       assigns(:scheduled_events).count.should == 1
     end
 
     it "should set up resolved events" do
-      Event.stub(:resolved).and_return([mock_model(Event, {})])
+      Event.stub_chain(:resolved, :order, :all).and_return([mock_model(Event, {})])
       get :index
       assigns(:resolved_events).count.should == 1
     end
