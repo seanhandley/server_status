@@ -30,24 +30,24 @@ Event.create(title: "Planned maintenance",
 event = Event.create(title: "Bees in the server room",
              description: "Need a better place to make our honey. It's really
               tasty but the stings are so painful.",
-             status: Status.find_by_title('major_issue'),
+             status: Status.find_by_title('all_ok'),
              resolved_at: Time.now - 4.days)
 event.save
 event = Event.create(title: "Elephants in the server room",
              description: "They have great memories but they're not so good
               at avoiding trailing wires.",
-             status: Status.find_by_title('major_issue'),
+             status: Status.find_by_title('all_ok'),
              resolved_at: Time.now - 3.days)
 event.save
 event = Event.create(title: "Badgers in the server room",
              description: "We really honestly don't know why animals like our
               server room so much. It's weird.",
-             status: Status.find_by_title('major_issue'),
+             status: Status.find_by_title('all_ok'),
              resolved_at: Time.now - 2.days)
 event.save
 event = Event.create(title: "Unicorns in the server room",
              description: "How did unicorns get in here? Now there's rainbows
               and fairy dust all over the cabinets.",
-             status: Status.find_by_title('major_issue'),
+             status: Status.find_by_title('all_ok'),
              resolved_at: Time.now - 1.days)
 event.save
