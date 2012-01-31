@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_filter :user_signed_in?, :except => [:index, :show]
   def index
     @active_events = Event.active.order('updated_at DESC').all(limit: 2).map {|e| EventDecorator.new(e)}
     @scheduled_events = Event.scheduled.order('scheduled_for').all(limit: 2).map {|e| EventDecorator.new(e)}
@@ -8,6 +9,25 @@ class EventsController < ApplicationController
 
   def show
     @event = EventDecorator.new(Event.find(params[:id]))
+  end
+
+  def new
+    @event = Event.new
+  end
+
+  def create
+    Event.create(params[:event])
+    render :show, id: event.id
+  end
+
+  def update
+    event = Event.find(params[:id])
+    event.update_attributes(params[:event])
+    render :show, id: event.id
+  end
+
+  def edit
+    @event = Event.find(params[:id])
   end
 
 end

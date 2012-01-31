@@ -1,5 +1,6 @@
 ServerStatus::Application.routes.draw do
-  resources :events
   resources :sessions
+  resources :events
+  resources :updates
   root :to => "events#index"
 end

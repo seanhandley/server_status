@@ -126,3 +126,13 @@ body {
 .update p {
   margin-bottom: 0px;
 }
+
+#flash {
+  position: fixed;
+  top: 0px;
+  margin-left: 20px;
+  margin-top: 45px;
+  width:780px;
+  z-index: 1000;
+  opacity:0.9;
+}

@@ -1,1 +1,6 @@
 en:
+  error_text: 'Oops!'
+  success_text: 'Brilliant.'
+  alert_text: 'Heads up!'
+  notice_text: 'Good news.'
+  info_text: 'Just so you know.'

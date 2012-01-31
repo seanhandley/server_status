@@ -2,11 +2,29 @@
   <h2><%= @event.title %>
   <span class="label <%= @event.status.title %>"><%= @event.status.title.humanize %></span></h2>
   <p><%= @event.description %></p>
-  <h4><small><%= @event.timestamp %></small></h4>
+  <h4><small><%= @event.timestamp %></small>
+    <% if current_user %>
+     <small><%= link_to 'Edit', edit_event_path(@event) %></small>
+    <% end %>
+  </h4>
 </div>
+
 <div class="updates">
   <h6>Updates (<%= @event.updates.count %>)</h6>
   <% @event.updates.each do |update| %>
     <%= render partial: "update", locals: { update: UpdateDecorator.new(update) } %>
   <% end %>
 </div>
+<% if current_user %>
+  <div class="add-update">
+    <%= form_for Update.new, html: { class: 'form-stacked'} do |f| %>
+      <fieldset>
+        <%= f.hidden_field :event_id, value: @event.id %>
+        <div class="input">
+          <%= f.text_area :description, rows: 2 %>
+        </div>
+        <%= f.submit 'Add Update', class: 'btn primary' %>
+      </fieldset>
+    <% end %>
+  </div>
+<% end %>

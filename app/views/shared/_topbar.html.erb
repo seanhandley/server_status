@@ -8,11 +8,18 @@
         <li><a href="http://www.twitter.com/#!/MelbourneHost">Twitter</a></li>
         <li><a href="http://support.melbourne.co.uk">Support</a></li>
       </ul>
-      <%= form_tag(session_path, {:class => "pull-right", :id => 'login-form'}) do %>
-        <%= text_field_tag :username, '', :class => "input-small", :placeholder => "Username" %>
-        <%= password_field_tag :password,'', :class => "input-small", :placeholder => "Password" %>
-        <%= submit_tag "Sign In", :class => "btn info" %>
-      <% end %>
+      <div class="pull-right">
+        <% if current_user %>
+          <%= render partial: 'shared/logout_link' %>
+        <% else %>
+          <%= form_tag(sessions_path, { :id => 'login-form'}) do %>
+            <%= text_field_tag :username, '', :class => "input-small", :placeholder => "Username" %>
+            <%= password_field_tag :password,'', :class => "input-small", :placeholder => "Password" %>
+            <%= submit_tag "Sign In", :class => "btn info" %>
+          <% end %>
+          <ul id="logout-form" style="display:none;" class="nav"><li><%= link_to "Log out?", sessions_path(current_user), :id => 'logout-link', :method => :delete %></li></ul></div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

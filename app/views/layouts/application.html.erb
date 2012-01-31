@@ -5,18 +5,17 @@
   <meta content='text/html; charset=utf-8' http-equiv='Content-type'>
   <%= stylesheet_link_tag 'bootstrap.min', 'application' %>
   <%= javascript_include_tag 'jquery.min.js', 'application.js' %>
+  <%= javascript_include_tag :all %>
   <%= javascript_include_tag 'bootstrap-dropdown.js', 'bootstrap-alerts.js', 'bootstrap-buttons.js' %>
   <%= javascript_include_tag 'bootstrap-modal.js', 'bootstrap-twipsy.js', 'bootstrap-popover.js' %>
     <%= javascript_include_tag 'bootstrap-tabs.js' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render 'shared/flash', :flash => flash %>
-
   <%= render partial: 'shared/topbar' %>
 
   <div class="container">
-
+    <%= render 'shared/flash', :flash => flash %>
     <div class="content">
       <%= yield %>
     </div>

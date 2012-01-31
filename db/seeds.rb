@@ -51,3 +51,6 @@ event = Event.create(title: "Unicorns in the server room",
              status: Status.find_by_title('all_ok'),
              resolved_at: Time.now - 1.days)
 event.save
+
+User.all.each {|u| u.destroy }
+User.create(username: 'username', password: 'password')
