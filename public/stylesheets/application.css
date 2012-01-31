@@ -27,21 +27,28 @@ body {
 }
 
 .event {
-
   padding: 5px;
   margin-bottom: 0px;
-
-/*  border: 1px solid #000;
-  -webkit-border-radius: 6px 6px 6px 6px;
-     -moz-border-radius: 6px 6px 6px 6px;
-          border-radius: 6px 6px 6px 6px;
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-          box-shadow: 0 1px 2px rgba(0,0,0,.15);   */
 }
 
 .event p {
   margin-bottom: 0px;
+}
+
+.event.condensed p {
+  font-size: 11px;
+}
+
+.event.condensed h3 {
+  font-size: 14px;
+}
+
+.event.condensed h3 span {
+  display: none;
+}
+
+.event.condensed h4 small {
+  font-size: 9px;
 }
 
 .page-header {
