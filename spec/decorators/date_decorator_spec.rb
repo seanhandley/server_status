@@ -13,7 +13,7 @@ describe DateDecorator do
   context "#formatted_date" do
     it "should format the date sensibly" do
       subject.extend(DateDecorator)
-      subject.formatted_date(Time.now).should =~ /\d\d?:\d\d?:\d\d? \w+ \d\d?\w\w \w+ \d\d\d\d/i
+      subject.formatted_date(Time.now).should =~ /\d\d?:\d\d? \w\w \w+ \d\d?\w\w \w+ \d\d\d\d/i
     end
   end
 
