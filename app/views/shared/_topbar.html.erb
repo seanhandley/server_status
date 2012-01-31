@@ -8,11 +8,11 @@
         <li><a href="http://www.twitter.com/#!/MelbourneHost">Twitter</a></li>
         <li><a href="http://support.melbourne.co.uk">Support</a></li>
       </ul>
-      <form action="" class="pull-right">
-        <input class="input-small" type="text" placeholder="Username">
-        <input class="input-small" type="password" placeholder="Password">
-        <button class="btn info" type="submit">Sign in</button>
-      </form>
+      <%= form_tag(session_path, {:class => "pull-right", :id => 'login-form'}) do %>
+        <%= text_field_tag :username, '', :class => "input-small", :placeholder => "Username" %>
+        <%= password_field_tag :password,'', :class => "input-small", :placeholder => "Password" %>
+        <%= submit_tag "Sign In", :class => "btn info" %>
+      <% end %>
     </div>
   </div>
 </div>
