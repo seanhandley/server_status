@@ -8,8 +8,11 @@
     <h2>Current Issues</h2>
     <% if @active_events.count > 0 %>
       <% @active_events.each do |event| %>
-        <%= render partial: 'event', locals: {event: event} %>
+        <div class="event">
+          <%= render partial: 'event', locals: {event: event} %>
+        </div>
       <% end %>
+      <a href="#">See More</a>
     <% else %>
       <h1><small>There are no current issues</small></h1>
     <% end %>
@@ -17,8 +20,11 @@
     <h2>Scheduled Maintenance</h2>
     <% if @scheduled_events.count > 0 %>
       <% @scheduled_events.each do |event| %>
-        <%= render partial: 'event', locals: {event: event} %>
+        <div class="event">
+          <%= render partial: 'event', locals: {event: event} %>
+        </div>
       <% end %>
+      <a href="#">See More</a>
     <% else %>
       <h1><small>There are no scheduled maintenance tasks</small></h1>
     <% end %>
@@ -27,8 +33,11 @@
     <h2>Resolved Issues</h2>
     <% if @resolved_events.count > 0 %>
       <% @resolved_events.each do |event| %>
-        <%= render partial: 'event', locals: {event: event} %>
+        <div class="event condensed">
+          <%= render partial: 'event', locals: {event: event} %>
+        </div>
       <% end %>
+      <a href="#">See More</a>
     <% else %>
       <p><small>There are no resolved issues</small></p>
     <% end %>
