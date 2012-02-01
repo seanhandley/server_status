@@ -1,1 +1,1 @@
-<ul id="logout-form" class="nav"><li><%= link_to "Log out?", session_path(current_user), :id => 'logout-link', :method => :delete %></li></ul></div>
+<ul class="nav"><li><%= link_to "Log out #{current_user.username.humanize.titleize}?", session_path(current_user), :id => 'logout-link', :method => :delete %></li></ul></div>
