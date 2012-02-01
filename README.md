@@ -3,7 +3,9 @@
 * To get going:
 
     `$ bundle install`
+
     `$ rake db:migrate`
+
     `$ rake db:seed`
 
 * To run tests:
