@@ -1,5 +1,7 @@
 # Server status app
 
+A status application to show current live issues, planned maintenance and past resolved events.
+
 * To get going:
 
     `$ bundle install`
