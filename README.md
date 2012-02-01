@@ -2,6 +2,8 @@
 
 A status application to show current live issues, planned maintenance and past resolved events.
 
+Live testing area here: [http://mbserverstatus.heroku.com/](http://mbserverstatus.heroku.com/)
+
 * To get going:
 
     `$ bundle install`
