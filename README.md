@@ -8,6 +8,8 @@ Live testing area here: [http://mbserverstatus.heroku.com/](http://mbserverstatu
 
     `$ bundle install`
 
+    `$ rake db:create`
+
     `$ rake db:migrate`
 
     `$ rake db:seed`
