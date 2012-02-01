@@ -12,4 +12,5 @@ group :development, :test do
   gem "jasmine"
   gem "heroku"
   gem "database_cleaner"
+  gem "simplecov"
 end

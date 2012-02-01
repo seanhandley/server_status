@@ -19,3 +19,6 @@
 
 # Ignore the Mac OX DS Store
 .DS_Store
+
+# Ignore coverage data
+/coverage

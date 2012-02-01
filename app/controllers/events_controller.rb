@@ -16,14 +16,14 @@ class EventsController < ApplicationController
   end
 
   def create
-    Event.create(params[:event])
-    render :show, id: event.id
+    @event = EventDecorator.new(Event.create(params[:event]))
+    render :show, id: @event.id
   end
 
   def update
-    event = Event.find(params[:id])
-    event.update_attributes(params[:event])
-    render :show, id: event.id
+    @event = EventDecorator.new(Event.find(params[:id]))
+    @event.update_attributes(params[:event])
+    render :show, id: @event.id
   end
 
   def edit

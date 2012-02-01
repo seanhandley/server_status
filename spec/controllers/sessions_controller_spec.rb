@@ -4,7 +4,6 @@ describe SessionsController do
 
   before do
     @user = User.create(:username => 'test', :password => 'test')
-    #session.stub(:[]).with(:user_id).and_return(@user.id)
   end
 
   context "POST create" do

@@ -7,6 +7,9 @@
         <li><a href="http://www.melbourne.co.uk">Website</a></li>
         <li><a href="http://www.twitter.com/#!/MelbourneHost">Twitter</a></li>
         <li><a href="http://support.melbourne.co.uk">Support</a></li>
+        <% if current_user %>
+          <li><%= link_to 'Add Event', new_event_path %></li>
+        <% end %>
       </ul>
       <div class="pull-right">
         <% if current_user %>

@@ -1,4 +1,13 @@
-<%= form_for event do |f| %>
-  <%= f.text_field :title %>
+<%= form_for event, html: { class: '.form-inline'} do |f| %>
+  <label>Title</label>
+  <%= f.text_field :title %><br>
+  <label>Description</label>
+  <%= f.text_area :description %><br>
+  <label>Status</label>
+  <%= f.select :status_id, Status.all.collect{|s| [s.title.humanize.titleize, s.id]} %><br>
+  <label>Resolved</label>
+  <%= f.text_field :resolved_at, :'data-datepicker' => "datepicker" %><br>
+  <label>Planned Maintenance</label>
+  <%= f.text_field :scheduled_for, :'data-datepicker' => "datepicker" %>
   <%= f.submit 'Submit' %>
 <% end %>
