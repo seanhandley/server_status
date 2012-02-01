@@ -10,6 +10,8 @@
 
 * To run tests:
 
+    `$ rake db:test:prepare`
+
     `$ rspec spec`
 
 * Default username and password is 'melbourne_support' and 'password'.
