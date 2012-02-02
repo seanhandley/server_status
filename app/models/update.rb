@@ -1,6 +1,6 @@
 class Update < ActiveRecord::Base
   # Attributes
-  attr_accessible :description, :event
+  attr_accessible :description, :event, :user
 
   # Associations
   belongs_to :event

@@ -2,6 +2,11 @@ Status.all.each{|s| s.destroy }
 Status.create! title: 'major_issue', priority: 1
 Status.create! title: 'minor_issue', priority: 2
 Status.create! title: 'all_ok', priority: 3
+
+User.all.each {|u| u.destroy }
+user = User.create(username: 'melbourne_support', password: 'password')
+Event.all.each{|e| e.user = User.first; e.save }
+
 Event.all.each{|e| e.destroy }
 Event.create(title: "Alien invasion",
              description: "After spotting lights above the data centre it turns
@@ -12,9 +17,9 @@ event = Event.create(title: "It's all gone wrong",
              have exploded violently in a cloud of dust.",
              status: Status.find_by_title('major_issue'))
 event.create_update("Went into the server room. It's a real mess in there. Bits of
-server all over the place, clouds of smoke, crying children. Mass hysteria.")
+server all over the place, clouds of smoke, crying children. Mass hysteria.", user)
 event.create_update("Attempting to rebuild servers with duct tape. Going well so
-far. Maybe a few tin cans and some bubble gum will help too.")
+far. Maybe a few tin cans and some bubble gum will help too.", user)
 event.updated_at = Time.now + 1.minutes
 event.save
 Event.create(title: "Planned maintenance",
@@ -51,8 +56,3 @@ event = Event.create(title: "Unicorns in the server room",
              status: Status.find_by_title('all_ok'),
              resolved_at: Time.now - 1.days)
 event.save
-
-User.all.each {|u| u.destroy }
-User.create(username: 'melbourne_support', password: 'password')
-Event.all.each{|e| e.user = User.first; e.save }
-Update.all.each{|u| u.user = User.first; u.save }
