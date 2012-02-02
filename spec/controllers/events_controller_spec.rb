@@ -120,5 +120,13 @@ describe EventsController do
         response.should be_success
       end
     end
+
+    context "GET feed" do
+      it "should respond successfully with xml" do
+        get :feed, :format => 'atom'
+        response.should be_success
+        assigns(:all_events).should_not be_nil
+      end
+    end
   end
 end

@@ -3,6 +3,7 @@
 <head>
   <title>Server Status App</title>
   <meta content='text/html; charset=utf-8' http-equiv='Content-type'>
+  <%= auto_discovery_link_tag :atom, "/feed.atom" %>
   <%= stylesheet_link_tag 'bootstrap.min', 'application' %>
   <%= javascript_include_tag 'jquery.min.js', 'application.js' %>
   <%= javascript_include_tag :all %>

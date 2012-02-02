@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_filter :user_signed_in?, :except => [:index, :show]
+  before_filter :user_signed_in?, :except => [:index, :show, :feed]
   def index
     @active_events = Event.active.order('updated_at DESC').all(limit: 2).map {|e| EventDecorator.new(e)}
     @scheduled_events = Event.scheduled.order('scheduled_for').all(limit: 2).map {|e| EventDecorator.new(e)}
@@ -28,6 +28,15 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
+  end
+
+  def feed
+    @all_events = Event.all
+    respond_to do |format|
+      format.atom {
+        render :layout => false
+      }
+    end
   end
 
 end
