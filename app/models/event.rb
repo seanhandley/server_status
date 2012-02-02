@@ -31,6 +31,7 @@ class Event < ActiveRecord::Base
   def create_update(update_text)
     self.updates.create(description: update_text)
     self.updated_at = Time.now
+    self.save
   end
 
   def resolve
