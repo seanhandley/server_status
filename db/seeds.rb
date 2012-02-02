@@ -5,8 +5,6 @@ Status.create! title: 'all_ok', priority: 3
 
 User.all.each {|u| u.destroy }
 user = User.create(username: 'melbourne_support', password: 'password')
-Event.all.each{|e| e.user = User.first; e.save }
-
 Event.all.each{|e| e.destroy }
 Event.create(title: "Alien invasion",
              description: "After spotting lights above the data centre it turns
@@ -56,3 +54,6 @@ event = Event.create(title: "Unicorns in the server room",
              status: Status.find_by_title('all_ok'),
              resolved_at: Time.now - 1.days)
 event.save
+
+Event.all.each{|e| e.user = user; e.save }
+Update.all.each{|u| u.user = user; u.save }
