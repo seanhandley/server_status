@@ -73,6 +73,15 @@ describe Event do
       valid_event.updates.count.should == 1
     end
 
+    it "should update the event timestamp when adding a new update" do
+      valid_event.updates.count.should == 0
+      valid_event.save
+      old_timestamp = valid_event.updated_at
+      valid_event.create_update("Foo")
+      valid_event.updates.count.should == 1
+      old_timestamp.should < valid_event.updated_at
+    end
+
   end
 
 end
