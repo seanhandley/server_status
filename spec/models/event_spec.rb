@@ -69,7 +69,7 @@ describe Event do
     it "should allow adding an update to an event" do
       valid_event.updates.count.should == 0
       valid_event.save
-      valid_event.create_update("Foo")
+      valid_event.create_update("Foo", mock_model(User))
       valid_event.updates.count.should == 1
     end
 
@@ -77,7 +77,7 @@ describe Event do
       valid_event.updates.count.should == 0
       valid_event.save
       old_timestamp = valid_event.updated_at
-      valid_event.create_update("Foo")
+      valid_event.create_update("Foo", mock_model(User))
       valid_event.updates.count.should == 1
       old_timestamp.should < valid_event.updated_at
     end

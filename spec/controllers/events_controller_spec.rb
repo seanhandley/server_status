@@ -27,6 +27,7 @@ describe EventsController do
 
       before do
         @controller.stub(:user_signed_in?).and_return(true)
+        @controller.stub(:current_user).and_return(User.create(:username => 'test', :password => 'test'))
       end
 
       context "GET new" do
