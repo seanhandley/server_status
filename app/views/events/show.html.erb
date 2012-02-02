@@ -2,7 +2,7 @@
   <h2><%= @event.title %>
   <span class="label <%= @event.status.title %>"><%= @event.status.title.humanize %></span></h2>
   <p><%= @event.description %></p>
-  <h4><small><%= @event.timestamp %></small>
+  <h4><small><%= @event.timestamp %> by <%= @event.user.username.humanize.titleize %></small>
     <% if current_user %>
      <small><%= link_to 'Edit', edit_event_path(@event) %></small>
     <% end %>

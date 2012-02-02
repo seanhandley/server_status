@@ -4,4 +4,5 @@ class UpdateDecorator < ApplicationDecorator
   def timestamp
     "Updated At #{formatted_date(model.updated_at)}"
   end
+
 end

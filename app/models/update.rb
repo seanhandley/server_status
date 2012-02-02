@@ -4,6 +4,7 @@ class Update < ActiveRecord::Base
 
   # Associations
   belongs_to :event
+  belongs_to :user
 
   # Validations
   validates_length_of :description, :within => 1..1000

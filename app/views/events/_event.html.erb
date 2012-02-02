@@ -1,5 +1,5 @@
 <h3><%= link_to event.title, event_path(event) %>
 <span class="label <%= event.status.title %>"><%= event.status.title.humanize %></span></h3>
 <p><%= event.abridged_description %></p>
-<h4><small><%= event.timestamp %></small>
+<h4><small><%= event.timestamp %> by <%= event.user.username.humanize.titleize %></small>
 </h4>

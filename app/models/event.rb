@@ -7,6 +7,7 @@ class Event < ActiveRecord::Base
   # Associations
   has_many :updates, :dependent => :delete_all
   belongs_to :status
+  belongs_to :user
 
   # Validations
   validates_length_of :title, :within => 1..30
@@ -28,8 +29,8 @@ class Event < ActiveRecord::Base
   end
 
   # Methods
-  def create_update(update_text)
-    self.updates.create(description: update_text)
+  def create_update(update_text, user)
+    self.updates.create(description: update_text, user: user)
     self.updated_at = Time.now
     self.save
   end

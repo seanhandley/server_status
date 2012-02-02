@@ -17,6 +17,8 @@ class EventsController < ApplicationController
 
   def create
     @event = EventDecorator.new(Event.create(params[:event]))
+    @event.user = current_user
+    @event.save
     render :show, id: @event.id
   end
 

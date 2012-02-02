@@ -54,3 +54,5 @@ event.save
 
 User.all.each {|u| u.destroy }
 User.create(username: 'melbourne_support', password: 'password')
+Event.all.each{|e| e.user = User.first; e.save }
+Update.all.each{|u| u.user = User.first; u.save }
