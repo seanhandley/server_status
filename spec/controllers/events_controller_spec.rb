@@ -62,17 +62,6 @@ describe EventsController do
       end
     end
 
-     def create
-       @event = Event.create(params[:event])
-       render :show, id: @event.id
-     end
-
-     def update
-       @event = Event.find(params[:id])
-       @event.update_attributes(params[:event])
-       render :show, id: @event.id
-     end
-
     after do
       @event.destroy
       @status.destroy
