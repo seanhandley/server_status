@@ -1,4 +1,4 @@
-# Server status app
+# Server status api [![Build Status](https://secure.travis-ci.org/seanhandley/server_status.png)](http://travis-ci.org/seanhandley/server_status)
 
 A status application to show current live issues, planned maintenance and past resolved events.
 
