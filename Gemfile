@@ -1,10 +1,9 @@
 source "https://rubygems.org"
 
-gem "rails", "3.2.0.rc2" # This is here for Heroku
+gem "rails", "~> 3.0" # This is here for Heroku
 gem "pg"
-gem "sqlite3"
 gem "jquery-rails"
-gem "bcrypt-ruby"
+gem "bcrypt-ruby", "3.0.0"
 
 group :development, :test do
   gem "capybara"
